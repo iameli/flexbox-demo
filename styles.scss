@@ -1,0 +1,77 @@
+
+@import "./_flexbox.scss";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @include flexbox;
+  // display: flex;
+  @include flex-direction(column);
+  background-color: rgba(gray, 0.2);
+}
+
+header {
+  background-color: rgba(red, 0.2);
+  @include flex-grow(0); // default
+
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(flex-start);
+  //
+  h1 {
+
+  }
+
+  nav {
+    background-color: rgba(green, 0.2);
+  }
+
+  nav span {
+    padding: 1em;
+    font-size: 1.3em;
+  }
+
+  div.user {
+    margin-left: auto;
+    background-color: rgba(purple, 0.2);
+    font-size: 2em;
+
+  }
+}
+
+main {
+  background-color: rgba(green, 0.2);
+  // Child flexbox directives
+  @include flex-grow(1);
+
+  // Parent flexbox directives
+  @include flexbox;
+  @include flex-direction(row); // default
+}
+
+section {
+  padding: 1em;
+}
+
+section.left {
+  background-color: rgba(orange, 0.2);
+  @include flex-basis(100px);
+}
+
+section.mid {
+  background-color: rgba(purple, 0.2);
+  @include flex-grow(1);
+  @include flex-basis(0); // default
+}
+
+section.right {
+  background-color: rgba(teal, 0.2);
+  @include flex-basis(150px);
+}
+
+footer {
+  background-color: rgba(blue, 0.2);
+  @include flex-grow(0); // default
+}
